@@ -243,6 +243,10 @@ function reset(){
     selectedBound.value = "circle";
     updateBounds();
 }
+function regenGrid(){
+    cellSize = 2 * defaultRadius;
+    grid = new SpatialGrid(cellSize);
+}
 loadPresetBtn.onclick = function(){
     console.log(selectedPreset.value);
     switch(selectedPreset.value){
@@ -260,6 +264,7 @@ loadPresetBtn.onclick = function(){
         case "cloth":
             reset();
             defaultRadius = 2;
+            regenGrid();
             collideBox.checked = false;
             boundBox.checked = false;
             sliceBox.checked = true;
@@ -270,7 +275,8 @@ loadPresetBtn.onclick = function(){
             break;
         case "circleEmitter":
             reset();
-            defaultRadius = 6;
+            defaultRadius = 6
+            regenGrid();
             emitting = true;
             collideBox.checked = true;
             boundBox.checked = true;
@@ -281,6 +287,7 @@ loadPresetBtn.onclick = function(){
         case "rope":
             reset();
             defaultRadius = 4;
+            regenGrid();
             emitting = false;
             collideBox.checked = true;
             boundBox.checked = true;
