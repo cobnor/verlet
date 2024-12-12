@@ -1,8 +1,103 @@
-canvas {
-    /* border : 1px solid rgb(105, 105, 105); */
-    position:absolute;
+/* Global Styles */
+body {
+  margin: 0;
+  background-color: #151C24;
+  color: #E2E3E4;
+  font-family: 'Fira Code', monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  overflow-x: hidden; /* Prevent scrolling */
 }
 
-body{
-    background-color: #151C24;
+/* Menu Bar */
+.menu-bar {
+  width: 100%;
+  background-color: #151C24;
+  padding: 10px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  font-family: 'Fira Code', monospace;
 }
+
+.controls, .simulation-options, .utilBtns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-family: 'Fira Code', monospace;
+}
+
+/* Labels and Checkboxes */
+label {
+  font-size: 14px;
+  cursor: pointer;
+  font-family: 'Fira Code', monospace;
+}
+
+input[type="checkbox"] {
+  accent-color: #2D333A;
+  margin-right: 5px;
+  font-family: 'Fira Code', monospace;
+}
+
+/* Dropdowns and Number Inputs */
+select, input[type="number"] {
+  background-color: #151C24;
+  color: #E2E3E4;
+  padding: 5px;
+  font-size: 14px;
+  font-family: 'Fira Code', monospace;
+  border-radius: 0px;
+  outline: none;
+  box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+input[type="number"] {
+  width: 60px;
+  text-align: center;
+}
+/* #2D333A */
+
+/* Buttons */
+button {
+  background-color: #2D333A;
+  color: #E2E3E4;
+  border: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-family: 'Fira Code', monospace;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+#reset, #loadPresetBtn {
+  background-color: #7776BC;
+  color: #E2E3E4;
+}
+
+button:hover {
+  background-color: #FF8484 !important;
+}
+
+/* Canvas */
+canvas {
+  background-color: #151C24;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+
+/* Responsive Canvas for Mobile */
+/*@media (max-width: 600px) {
+  canvas {
+    height: 70vh;
+    width: 100%;
+  }
+}*/
+

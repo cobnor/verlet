@@ -1,19 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>verlet</title>
-
-    <link rel="stylesheet" type="text/css" href="style.css">
-  </head>
-
-  <body>
-    <script type="module" src="./SpatialGrid.js" ></script>
-    <script type="module" src="./Point.js" ></script>
-    <script type="module" src="./Vector.js" ></script>
-    <script type="module" src="./main.js"></script>
-    <canvas id="canvas" width="1000" height="700"></canvas>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>verlet</title>
+  <link href="https://fonts.googleapis.com/css?family=Fira+Code&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+  <div class="menu-bar">
+    <div class="preset-controls">
+      <button id="loadPresetBtn" onclick "loadPreset()">Load Preset</button>
+      <select id="loadPreset">
+        <option value="default">Default</option>
+        <option value="emptyBox">Empty box</option>
+        <option value="cloth">Cloth</option>
+        <option value="circleEmitter">Circle emitter</option>
+        <option value="rope">Rope</option>
+      </select>
+    </div>
+    <div class="controls">
+      <label>
+        <input type="checkbox" id="collision" name="collision" />
+        Collision
+      </label>
+      <label>
+        <input type="checkbox" id="bounds" name="bounds" />
+        Enable boundaries
+      </label>
+      <label>
+        <input type="checkbox" id="slice" name="slice" />
+        Slice links
+      </label>
+    </div>
+    <div class="simulation-options"> 
+      <label for="boundType">Boundary type:</label>
+      <select id="boundType">
+        <option value="box">Box</option>
+        <option value="circle">Circle</option>
+      </select>
+      <label for="subSteps">Substeps:</label>
+      <input type="number" id="step-size" min="1" max="16" value="8" />
+    </div>
+    <div class="util-buttons">
+      <button id="addEmitterBtn">Toggle emitter</button>
+      <button id="add-collider">Add obstacles</button>
+      <button id="reset">Reset</button>
+    </div>
+  </div>
+  <canvas id="canvas" width="1100" height="750"></canvas>
+  <script type="module" src="./SpatialGrid.js"></script>
+  <script type="module" src="./Point.js"></script>
+  <script type="module" src="./Vector.js"></script>
+  <script type="module" src="./main.js"></script>
+</body>
 </html>
